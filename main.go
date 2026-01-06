@@ -50,7 +50,7 @@ func main() {
 	parser := argparse.NewParser("geulgyeol-html-precompressor", "A HTML pre-compressing server for Geulgyeol.")
 
 	port := parser.Int("p", "port", &argparse.Options{Default: 8080, Help: "Port to run the server on"})
-	originalEndpoint := parser.String("o", "original-endpoint", &argparse.Options{Default: "http://html-precompressor.default.svc.cluster.local", Help: "Original HTML storage server endpoint"})
+	originalEndpoint := parser.String("o", "original-endpoint", &argparse.Options{Default: "http://html-storage.default.svc.cluster.local", Help: "Original HTML storage server endpoint"})
 	zstdDictionaryPath := parser.String("z", "zstd-dictionary", &argparse.Options{Default: "./zstd_dict", Help: "Path to Zstd dictionary file"})
 
 	err := parser.Parse(os.Args)
